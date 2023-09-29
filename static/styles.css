@@ -1,0 +1,137 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color:aquamarine;
+    justify-content: center;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    background-color:cadetblue;
+    justify-content: center;
+}
+
+.main_content{
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    overflow:hidden; 
+    overflow-y:scroll;
+    height:200px; 
+    width:100%;
+}
+
+.q_list_item {
+    padding: 5px;
+    display: flex;
+    width: 95%;
+    background-color: white;
+    border: 1px solid aqua;
+    margin-bottom: 1px;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+label{
+    font-family: Arial, Helvetica, sans-serif;
+    size: 20px;
+}
+
+.text_input{
+    display: flex;
+    width: 100%;
+    padding: 3px;
+    border: 1px, solid black;
+    color: black;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text_input.auth{
+    width: 50%;
+}
+
+h1, h2, h3, h4 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#answer_sheet {
+    display: flex;
+    flex-direction: column;
+}
+
+#answer_sheet.auth {
+    flex-flow: column wrap;
+}
+
+.submit_form.auth{
+    flex-flow: column, wrap;
+    align-items: center;
+}
+
+
+.submit_btn {
+    display: flex;
+    align-self: flex-end;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.submit_btn.login {
+    align-self: flex-start;
+    margin-left: 10px;
+}
+
+.submit_btn.auth {
+    align-self: center;
+    width: 30%;
+    justify-content: center;
+}
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }

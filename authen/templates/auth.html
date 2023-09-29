@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="main_content">
+  <div class="submit_form auth">
+    <form id="answer_sheet" class="auth" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="submit_btn auth" type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+{% endblock%}

@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<div class="main_content">
+  <h1>{{ question.question }}</h1>
+  <div class="q_list">
+  <ul>
+      {% for answer in answers %}
+      <li class="q_list_item">{{answer.answer}} by {{answer.getUsername}}</li>
+      {% endfor %}
+  </ul>
+  </div>
+
+  {% if user.is_authenticated %}
+  <div class="submit_form">
+    <form id="answer_sheet" method="post">
+        {% csrf_token %}
+        {% comment %} <label for="name">Name:</label><br>
+        <input class="text_input" type="text" id="name" name="name" value="Your name"><br> {% endcomment %}
+        <label for="answer">Answer:</label><br>
+        <textarea class="text_input" type="text" id="answer" name="answer"  cols="50" rows="10" value="Your answer"></textarea><br><br>
+        <input class="submit_btn" type="submit" value="Submit">
+    </form>
+  </div>
+
+  {% else %}
+  {% endif %}
+</div>
+{% endblock %}

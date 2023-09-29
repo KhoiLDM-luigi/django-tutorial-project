@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+<div class="main_content">
+  <h1>QnA</h1>
+  <div class="q_list">
+  <ul>
+      {% for question in questions %}
+      <a href="/qna/{{ question.id }}/" class="q_list_item"><li>{{question.question}}</li></a>
+      {% endfor %}
+  </ul>
+  </div>
+  {% if user.is_authenticated %}
+  <div class="submit_form">
+    <form id="answer_sheet" method="post">
+        {% csrf_token %}
+        {% comment %} <label for="name">Name:</label><br>
+        <input class="text_input" type="text" id="name" name="name" value="Your name"><br> {% endcomment %}
+        <label for="question">Question:</label><br>
+        <input class="text_input" type="text" id="question" name="question" value="Your question"><br><br>
+        <input class="submit_btn" type="submit" value="Submit">
+    </form>
+  </div>
+
+  {% else %}
+  <div class="main_content">
+    <label>You need to login to posting question</label> <a class="submit_btn login" href={% url 'authen:login' %}>Login</a>
+    <label>Not having account?</label> <a class="submit_btn login" href={% url 'authen:register' %}>Sign up</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

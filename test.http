@@ -1,0 +1,62 @@
+@host=localhost:5000
+###
+GET http://{{host}}/apis/questions
+### question detail
+GET http://{{host}}/apis/questions/1
+### get authentication token
+POST http://{{host}}/auth/
+Content-Type: application/json
+
+{
+    "username": "khoildm",
+    "password": "25082002"
+}
+### new question with authorization
+POST http://{{host}}/apis/questions/
+Content-Type: application/json
+Authorization: token 9a1ad8017027d7d6c459f0d70f5069984eb5a8b2
+
+{
+    "question": "test",
+    "user_id": 1
+}
+### new question with no authorization
+POST http://{{host}}/apis/questions/
+Content-Type: application/json
+
+{
+    "question": "test",
+    "user_id": 2
+}
+### new answer 
+POST http://{{host}}/apis/questions/3/
+Content-Type: application/json
+Authorization: token 9a1ad8017027d7d6c459f0d70f5069984eb5a8b2
+
+{
+    "answer": "test",
+    "user_id": 1
+}
+###
+PUT http://{{host}}/apis/questions/1/
+Content-Type: application/json
+Authorization: token 9a1ad8017027d7d6c459f0d70f5069984eb5a8b2
+
+{
+    "question": "test",
+    "user_id": 2
+}
+###
+DELETE http://{{host}}/apis/questions/2/
+Authorization: token 9a1ad8017027d7d6c459f0d70f5069984eb5a8b2
+### get answer
+GET http://{{host}}/apis/answers/1
+### get answer detail
+POST http://{{host}}/apis/answers/ 
+Content-Type: application/json
+
+{
+    "answer": "test",
+    "question_id": 1,
+    "user_id": 1
+}

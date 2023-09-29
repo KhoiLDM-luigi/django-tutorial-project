@@ -1,0 +1,8 @@
+<div class="header">
+  {% if user.is_authenticated %}
+  <a class="submit_btn login" href={% url 'authen:logout' %}>Log out</a>
+  {% else %}
+  <a class="submit_btn login" href={% url 'authen:login' %}>Log In</a>
+  <a class="submit_btn login" href={% url 'authen:register' %}>Register</a>
+  {% endif %}
+</div>

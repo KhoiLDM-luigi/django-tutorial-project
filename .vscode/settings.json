@@ -1,0 +1,11 @@
+{
+  "python.pythonPath": "/Users/khoi.le/.local/share/virtualenvs/django-gPjszF_r",
+  "cSpell.words": [
+    "kflc",
+    "yjiptgtp"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
+}
